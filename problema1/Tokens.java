@@ -18,7 +18,18 @@ public class Tokens {
         this.valor = valor;
     }
 
-
+    public String toString(){
+      String output = null;
+      switch(this){
+            case OPERANDO: output ="OPERANDO"; break;
+            case OPERADORBAJO: output ="OPERADORBAJO"; break;
+            case OPERANDOMEDIO: output ="OPERANDOMEDIO"; break;
+            case OPERADORALTO: output ="OPERADORALTO"; break;
+            case PARENTESISABIERTO: output ="PARENTESISABIERTO"; break;
+            case PARENTESISCERRADO: output ="PARENTESISCERRADO"; break;
+            case PUNTOYCOMA: output ="PUNTOYCOMA"; break;
+      return output;
+    }
     enum Tipos{
         OPERANDO ("[0-9]+"),
         OPERADORBAJO ("[+|-]"),
@@ -26,7 +37,7 @@ public class Tokens {
         OPERADORALTO("[**]"),
         PARENTESISABIERTO("[(]"),
         PARENTESISCERRADO("[)]"),
-        PUNTOYCOMA("[;]");
+        PUNTOYCOMA(";");
 
         public final String patron;
         Tipos(String s){
